@@ -21132,4 +21132,15 @@ div.tagsinput {
   -webkit-flex-grow: 1;
   flex-grow: 1; }
 
+#fetch {
+  background-color: grey;
+  font-size: 24px;
+  transition-duration: 0.4s;
+  border-radius: 8px;
+}
+
+#fetch:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
 /*# sourceMappingURL=maps/style.css.map */
