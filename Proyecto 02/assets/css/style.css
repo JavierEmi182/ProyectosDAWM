@@ -21143,4 +21143,45 @@ div.tagsinput {
   background-color: #4CAF50; /* Green */
   color: white;
 }
+
+#filtrar {
+  background-color: aquamarine;
+  font-size: 24px;
+  transition-duration: 0.4s;
+  border-radius: 8px;
+}
+
+#filtrar:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+#grafo1,#grafo2 {
+  background-color: lightblue;
+  font-size: 24px;
+  transition-duration: 0.4s;
+  border-radius: 8px;
+}
+
+#grafo1:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+#grafo2:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+/*grafo
+#my-chart.line {
+  height: 200px;
+  max-width: 400px;
+  margin: 0 auto;
+}*/
+
+#my-chart {
+  height: 100px; 
+  max-width: 75%; 
+  margin: 5% auto;
+}
 /*# sourceMappingURL=maps/style.css.map */

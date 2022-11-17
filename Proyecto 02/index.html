@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+    <!-- CHARTS-->
+    <link rel="stylesheet" href="assets/css/charts.min.css">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
@@ -215,8 +217,6 @@
                 </div>
 
 
-
-
                 <div class="card">
                   <div class="card-body">
                     <div class="row">
@@ -278,7 +278,8 @@
                     <div class="row">
                       <div class="col-8 col-sm-12 col-xl-8 my-auto">
                         <div class="d-flex d-sm-block d-md-flex align-items-center">
-                          <h2 id="contGIF">0</h2>
+                          <h2 id="contGIF">0 </h2><span>&nbsp&nbsp&nbsp</span>
+                          <br><button id='filtrar'>GIF</button>
                         </div>
                       </div>
                     </div>
@@ -337,137 +338,55 @@
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Order Status</h4>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th>
-                              <div class="form-check form-check-muted m-0">
-                                <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input">
-                                </label>
-                              </div>
-                            </th>
-                            <th> Client Name </th>
-                            <th> Order No </th>
-                            <th> Product Cost </th>
-                            <th> Project </th>
-                            <th> Payment Mode </th>
-                            <th> Start Date </th>
-                            <th> Payment Status </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="form-check form-check-muted m-0">
-                                <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input">
-                                </label>
-                              </div>
-                            </td>
-                            <td>
-                              <img src="assets/images/faces/face1.jpg" alt="image" />
-                              <span class="pl-2">Javier Vergara</span>
-                            </td>
-                            <td> 02312 </td>
-                            <td> $14,500 </td>
-                            <td> Dashboard </td>
-                            <td> Credit card </td>
-                            <td> 04 Dec 2019 </td>
-                            <td>
-                              <div class="badge badge-outline-success">Approved</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check form-check-muted m-0">
-                                <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input">
-                                </label>
-                              </div>
-                            </td>
-                            <td>
-                              <img src="assets/images/faces/face2.jpg" alt="image" />
-                              <span class="pl-2">Estella Bryan</span>
-                            </td>
-                            <td> 02312 </td>
-                            <td> $14,500 </td>
-                            <td> Website </td>
-                            <td> Cash on delivered </td>
-                            <td> 04 Dec 2019 </td>
-                            <td>
-                              <div class="badge badge-outline-warning">Pending</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check form-check-muted m-0">
-                                <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input">
-                                </label>
-                              </div>
-                            </td>
-                            <td>
-                              <img src="assets/images/faces/face5.jpg" alt="image" />
-                              <span class="pl-2">Lucy Abbott</span>
-                            </td>
-                            <td> 02312 </td>
-                            <td> $14,500 </td>
-                            <td> App design </td>
-                            <td> Credit card </td>
-                            <td> 04 Dec 2019 </td>
-                            <td>
-                              <div class="badge badge-outline-danger">Rejected</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check form-check-muted m-0">
-                                <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input">
-                                </label>
-                              </div>
-                            </td>
-                            <td>
-                              <img src="assets/images/faces/face3.jpg" alt="image" />
-                              <span class="pl-2">Peter Gill</span>
-                            </td>
-                            <td> 02312 </td>
-                            <td> $14,500 </td>
-                            <td> Development </td>
-                            <td> Online Payment </td>
-                            <td> 04 Dec 2019 </td>
-                            <td>
-                              <div class="badge badge-outline-success">Approved</div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check form-check-muted m-0">
-                                <label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input">
-                                </label>
-                              </div>
-                            </td>
-                            <td>
-                              <img src="assets/images/faces/face4.jpg" alt="image" />
-                              <span class="pl-2">Sallie Reyes</span>
-                            </td>
-                            <td> 02312 </td>
-                            <td> $14,500 </td>
-                            <td> Website </td>
-                            <td> Credit card </td>
-                            <td> 04 Dec 2019 </td>
-                            <td>
-                              <div class="badge badge-outline-success">Approved</div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
+                    <h4 class="card-title">Grafico recursividad</h4>
+
+                    <button id='grafo1'>cargar Grafico Lineas</button>
+                    <table class="charts-css line" id="my-chart">
+
+                      <tbody>
+                       
+                        <!--<tr>
+                          <td style="--start: 0.0; --size: 0.4"> <span class="data"> $ 40K </span> </td>
+                        </tr>
+                        <tr>
+                          <td style="--start: 0.4; --size: 0.2"> <span class="data"> $ 20K </span> </td>
+                        </tr>
+                        <tr>
+                          <td style="--start: 0.2; --size: 0.6"> <span class="data"> $ 60K </span> </td>
+                        </tr>
+                        <tr>
+                          <td style="--start: 0.6; --size: 0.4"> <span class="data"> $ 40K </span> </td>
+                        </tr>
+                        <tr>
+                          <td style="--start: 0.4; --size: 0.8"> <span class="data"> $ 80K </span> </td>
+                        </tr>
+                        <tr>
+                          <td style="--start: 0.8; --size: 0.6"> <span class="data"> $ 60K </span> </td>
+                        </tr>
+                        <tr>
+                          <td style="--start: 0.6; --size: 1.0"> <span class="data"> $ 100K </span> </td>
+                        </tr>-->
+                      </tbody>
+
+                    </table>
                   </div>
+
+                  <div class="card-body">
+                    <h4 class="card-title">Grafico Extensiones</h4>
+
+                    <button id='grafo2'>cargar Grafico pie</button>
+                    <table class="charts-css column" id="my-chart">
+                      <tbody>
+                        <tr>
+                          <td style="--start: 0.6; --size: 1.0"> <span class="data"> $ 100K </span> </td>
+                        </tr>
+                        <tr>
+                          <td style="--start: 1.0; --size: 0.20"> <span class="data"> $ 100K </span> </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
                 </div>
               </div>
             </div>
