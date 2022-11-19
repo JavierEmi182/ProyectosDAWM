@@ -84,11 +84,32 @@ let cargarDatos = (imgFetch) => {
 
 //FILTRADO
 
-var filtrarhbtn= document.getElementById('filtrar');
-var flagFiltro= false;
+//JPG
+var filtrarhbtnJPG= document.getElementById('filtrarJPG');
+var flagFiltroJPG= false;
 
-      filtrarhbtn.addEventListener('click', (event) => {
-      if(flagFiltro==false){
+      filtrarhbtnJPG.addEventListener('click', (event) => {
+      if(flagFiltroJPG==false){
+            let imgFetch= document.getElementsByClassName('imgFetch')
+            console.log(imgFetch)
+            for (let i = 0; i < imgFetch.length; i++) {
+                  if(imgFetch[i].getAttribute('src').split('.')[2].toUpperCase()!='JPG'){
+                        imgFetch[i].style.visibility="hidden"
+                  }
+            }
+            flagFiltroJPG=true;
+      }else{
+            limpiarFiltro();
+            flagFiltroJPG=false;
+      }
+});
+
+//GIF
+var filtrarhbtnGIF= document.getElementById('filtrarGIF');
+var flagFiltroGIF= false;
+
+      filtrarhbtnGIF.addEventListener('click', (event) => {
+      if(flagFiltroGIF==false){
             let imgFetch= document.getElementsByClassName('imgFetch')
             console.log(imgFetch)
             for (let i = 0; i < imgFetch.length; i++) {
@@ -96,12 +117,56 @@ var flagFiltro= false;
                         imgFetch[i].style.visibility="hidden"
                   }
             }
-            flagFiltro=true;
+            flagFiltroGIF=true;
       }else{
             limpiarFiltro();
+            flagFiltroGIF=false;
       }
 });
 
+//PNG
+var filtrarhbtnPNG= document.getElementById('filtrarPNG');
+var flagFiltroPNG= false;
+
+      filtrarhbtnPNG.addEventListener('click', (event) => {
+      if(flagFiltroPNG==false){
+            let imgFetch= document.getElementsByClassName('imgFetch')
+            console.log(imgFetch)
+            for (let i = 0; i < imgFetch.length; i++) {
+                  if(imgFetch[i].getAttribute('src').split('.')[2].toUpperCase()!='PNG'){
+                        imgFetch[i].style.visibility="hidden"
+                  }
+            }
+            flagFiltroPNG=true;
+      }else{
+            limpiarFiltro();
+            flagFiltroPNG=false;
+      }
+});
+
+//OTROS
+var filtrarhbtnotros= document.getElementById('filtrarotros');
+var flagFiltrootros= false;
+
+      filtrarhbtnotros.addEventListener('click', (event) => {
+      if(flagFiltrootros==false){
+            let imgFetch= document.getElementsByClassName('imgFetch')
+            console.log(imgFetch)
+            for (let i = 0; i < imgFetch.length; i++) {
+                  let extension=imgFetch[i].getAttribute('src').split('.')[2].toUpperCase()
+                  if(extension=='PNG' || extension=='JPG' || extension=='GIF'){
+                        imgFetch[i].style.visibility="hidden"
+                  }
+            }
+            flagFiltrootros=true;
+      }else{
+            limpiarFiltro();
+            flagFiltrootros=false;
+      }
+});
+
+
+//LIMPIAR FILTRO
 let limpiarFiltro = () => {
       let imgFetch= document.getElementsByClassName('imgFetch')
       for (let i = 0; i < imgFetch.length; i++) {
@@ -116,28 +181,8 @@ var grafo1btn= document.getElementById('grafo1');
 grafo1btn.addEventListener('click', (event) => {
       let plantillaRow = ``
 
-            if(firstTime==false){/*
-                  if(contDespues<9){
-                        plantillaRow += `
-                                    <tr>
-                                        <td class="dato" style="--start: 0.0; --size: 0.0${contDespues}"> <span class="data"> ${contDespues} </span> </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="dato" style="--start: 0.0${contDespues}; --size: 0.0"> <span class="data">  </span> </td>
-                                    </tr>
-                                    `
-                        firstTime=true
-                  }else{
-                        plantillaRow += `
-                                    <tr>
-                                        <td class="dato" style="--start: 0.0; --size: 0.${contDespues}"> <span class="data"> ${contDespues} </span> </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="dato" style="--start: 0.${contDespues}; --size: 0.0"> <span class="data">  </span> </td>
-                                    </tr>
-                                    `
-                        firstTime=true
-                  }*/
+            if(firstTime==false){
+
                   plantillaRow += `
                                     <tr>
                                         <td class="dato" style="--start: 0.0; --size: ${contDespues}/15"> <span class="data"> ${contDespues} </span> </td>
@@ -152,27 +197,6 @@ grafo1btn.addEventListener('click', (event) => {
                   
             let lista=document.getElementsByClassName('dato')
             let contadorInicio=document.getElementsByClassName('dato')[lista.length-1].getAttribute('style').split(':')[2];
-            /*if(contDespues<10){
-                  plantillaRow += `
-                              <tr>
-                                  <td class="dato" style="--start: 0.0${contadorInicio}; --size: 0.0${contDespues}"> <span class="data"> ${contDespues} </span> </td>
-                              </tr>
-                              <tr>
-                                  <td class="dato" style="--start: 0.0${contDespues}; --size: 0.0"> <span class="data">  </span> </td>
-                              </tr>
-                              `
-                  contadorInicio=contDespues;
-            }else{
-                  plantillaRow += `
-                              <tr>
-                                  <td class="dato" style="--start: 0.${contadorInicio}; --size: 0.${contDespues}"> <span class="data"> ${contDespues} </span> </td>
-                              </tr>
-                              <tr>
-                                  <td class="dato" style="--start: 0.${contDespues}; --size: 0.0"> <span class="data">  </span> </td>
-                              </tr>
-                              `
-                  contadorInicio=contDespues;
-            }*/
 
             plantillaRow += `
                               <tr>
@@ -188,6 +212,15 @@ grafo1btn.addEventListener('click', (event) => {
 
 });
 
+//LIMPIAR GRAFICO
+let limpiarGrafico1 = () => {
+      document.getElementsByTagName('tbody')[0].innerHTML=''
+}
+var limpiarGraf1btn=document.getElementById('limpiar1')
+limpiarGraf1btn.addEventListener('click',(event) => {
+      limpiarGrafico1();
+      firstTime=false
+});
 
 //    CARGAR GRAFICO EXTENSIONES
 var grafo2btn= document.getElementById('grafo2');
@@ -205,21 +238,7 @@ grafo2btn.addEventListener('click', (event) => {
       let listaTags= ['JPG','GIF','PNG','Otros']
       //JPG GIF PNG OTROS
       for(var i=0;i<listaCont.length-1;i++){
-           /* if(listaCont[i].innerHTML>9){
-                  plantillaRow += `
-                  <tr>
-                        <th scope="row"> ${listaTags[i]} </th>
-                        <td style="--start: 0.0; --size: 0.${listaCont[i].innerHTML}"> <span class="data"> ${listaCont[i].innerHTML} </span> </td>
-                  </tr>
-                  `
-            }else{
-                  plantillaRow += `
-                  <tr>
-                        <th scope="row"> ${listaTags[i]} </th>
-                        <td style="--start: 0.0; --size: 0.0${listaCont[i].innerHTML}"> <span class="data"> ${listaCont[i].innerHTML} </span> </td>
-                  </tr>
-                  `
-            }*/
+
             plantillaRow += `
                   <tr>
                         
@@ -227,69 +246,10 @@ grafo2btn.addEventListener('click', (event) => {
                   </t
                   `
       }
-      //PNG
-      /*
-      if(valorPNG>9){
-            plantillaRow += `
-            <tr>
-                  <td style="--start: 0.0; --size: 0.${valorPNG}"> <span class="data"> PNG </span> </td>
-            </tr>
-            `
-      }else{
-            plantillaRow += `
-            <tr>
-                  <td style="--start: 0.0; --size: 0.0${valorPNG}"> <span class="data"> PNG </span> </td>
-            </tr>
-            `
-      }
 
-      //JPG
-      if(valorJPG>9){
-            plantillaRow += `
-            <tr>
-                  <td style="--start: 0.0; --size: 0.${valorJPG}"> <span class="data"> JPG </span> </td>
-            </tr>
-            `
-      }else{
-            plantillaRow += `
-            <tr>
-                  <td style="--start: 0.0; --size: 0.0${valorJPG}"> <span class="data"> JPG </span> </td>
-            </tr>
-            `
-      }
-
-      //GIF
-      if(valorGIF>9){
-            plantillaRow += `
-            <tr>
-                  <td style="--start: 0.0; --size: 0.${valorGIF}"> <span class="data"> GIF </span> </td>
-            </tr>
-            `
-      }else{
-            plantillaRow += `
-            <tr>
-                  <td style="--start: 0.0; --size: 0.0${valorGIF}"> <span class="data"> GIF </span> </td>
-            </tr>
-            `
-      }
-
-      //OTROS
-      if(valorOtros>9){
-            plantillaRow += `
-            <tr>
-                  <td style="--start: 0.0; --size: 0.${valorOtros}"> <span class="data"> Otros </span> </td>
-            </tr>
-            `
-      }else{
-            plantillaRow += `
-            <tr>
-                  <td style="--start: 0.0; --size: 0.0${valorOtros}"> <span class="data"> Otros </span> </td>
-            </tr>
-            `
-      }
-*/
       document.getElementsByClassName('column')[0].innerHTML = plantillaRow
 
       });
+
 
 

@@ -21144,19 +21144,19 @@ div.tagsinput {
   color: white;
 }
 
-#filtrar {
+.btnFiltro {
   background-color: aquamarine;
   font-size: 24px;
   transition-duration: 0.4s;
   border-radius: 8px;
 }
 
-#filtrar:hover {
+.btnFiltro:hover {
   background-color: #4CAF50; /* Green */
   color: white;
 }
 
-#grafo1,#grafo2 {
+#grafo1,#grafo2, #limpiar1{
   background-color: lightblue;
   font-size: 24px;
   transition-duration: 0.4s;
@@ -21164,6 +21164,11 @@ div.tagsinput {
 }
 
 #grafo1:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+#limpiar1:hover {
   background-color: #4CAF50; /* Green */
   color: white;
 }
