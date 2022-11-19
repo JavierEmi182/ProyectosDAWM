@@ -9,6 +9,7 @@ var fetchbtn= document.getElementById('fetch');
             //resetear contador 
       document.getElementById('contrec').innerHTML=0;
       document.getElementById('contJPG').innerHTML=0;
+      document.getElementById('contGIF').innerHTML=0;
       document.getElementById('contPNG').innerHTML=0;
       document.getElementById('contotros').innerHTML=0;
 
