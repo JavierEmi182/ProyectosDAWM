@@ -263,7 +263,7 @@
                     <div class="row">
                       <div class="col-8 col-sm-12 col-xl-8 my-auto">
                         <div class="d-flex d-sm-block d-md-flex align-items-center">
-                          <h2 id="contJPG">0</h2>
+                          <h2 class="cont" id="contJPG">0</h2>
                         </div>  
                       </div>
                     </div>
@@ -278,7 +278,7 @@
                     <div class="row">
                       <div class="col-8 col-sm-12 col-xl-8 my-auto">
                         <div class="d-flex d-sm-block d-md-flex align-items-center">
-                          <h2 id="contGIF">0 </h2><span>&nbsp&nbsp&nbsp</span>
+                          <h2 class="cont" id="contGIF">0 </h2><span>&nbsp&nbsp&nbsp</span>
                           <br><button id='filtrar'>GIF</button>
                         </div>
                       </div>
@@ -294,7 +294,7 @@
                     <div class="row">
                       <div class="col-8 col-sm-12 col-xl-8 my-auto">
                         <div class="d-flex d-sm-block d-md-flex align-items-center">
-                          <h2 id="contPNG">0</h2>
+                          <h2 class="cont" id="contPNG">0</h2>
                         </div>
                       </div>
                     </div>
@@ -309,7 +309,7 @@
                     <div class="row">
                       <div class="col-8 col-sm-12 col-xl-8 my-auto">
                         <div class="d-flex d-sm-block d-md-flex align-items-center">
-                          <h2 id="contotros">0</h2>
+                          <h2 class="cont" id="contotros">0</h2>
                         </div>
                       </div>
                     </div>
@@ -324,7 +324,7 @@
                     <div class="row">
                       <div class="col-8 col-sm-12 col-xl-8 my-auto">
                         <div class="d-flex d-sm-block d-md-flex align-items-center">
-                          <h2 id="contrec">0</h2>
+                          <h2 class="cont" id="contrec">0</h2>
                         </div>
                       </div>
                     </div>
@@ -345,44 +345,27 @@
 
                       <tbody>
                        
-                        <!--<tr>
-                          <td style="--start: 0.0; --size: 0.4"> <span class="data"> $ 40K </span> </td>
-                        </tr>
-                        <tr>
-                          <td style="--start: 0.4; --size: 0.2"> <span class="data"> $ 20K </span> </td>
-                        </tr>
-                        <tr>
-                          <td style="--start: 0.2; --size: 0.6"> <span class="data"> $ 60K </span> </td>
-                        </tr>
-                        <tr>
-                          <td style="--start: 0.6; --size: 0.4"> <span class="data"> $ 40K </span> </td>
-                        </tr>
-                        <tr>
-                          <td style="--start: 0.4; --size: 0.8"> <span class="data"> $ 80K </span> </td>
-                        </tr>
-                        <tr>
-                          <td style="--start: 0.8; --size: 0.6"> <span class="data"> $ 60K </span> </td>
-                        </tr>
-                        <tr>
-                          <td style="--start: 0.6; --size: 1.0"> <span class="data"> $ 100K </span> </td>
-                        </tr>-->
                       </tbody>
 
                     </table>
                   </div>
 
+                  <!--    Grafico extensiones    -->
+
                   <div class="card-body">
                     <h4 class="card-title">Grafico Extensiones</h4>
 
-                    <button id='grafo2'>cargar Grafico pie</button>
-                    <table class="charts-css column" id="my-chart">
+                    <button id='grafo2'>Cargar Grafico pie</button>
+                    <table class="charts-css column show-labels" id="my-chart">
+
+                      <caption> Grafico Extensiones </caption>
+                        <thead>
+                          <tr>
+                            <th scope="col"> Extension </th>
+                          </tr>
+                        </thead>
                       <tbody>
-                        <tr>
-                          <td style="--start: 0.6; --size: 1.0"> <span class="data"> $ 100K </span> </td>
-                        </tr>
-                        <tr>
-                          <td style="--start: 1.0; --size: 0.20"> <span class="data"> $ 100K </span> </td>
-                        </tr>
+
                       </tbody>
                     </table>
                   </div>

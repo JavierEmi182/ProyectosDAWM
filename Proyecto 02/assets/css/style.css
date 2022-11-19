@@ -21172,6 +21172,12 @@ div.tagsinput {
   background-color: #4CAF50; /* Green */
   color: white;
 }
+
+#my-chart.column {
+  height: 200px;
+  max-width: 300px;
+  margin: 0 auto;
+}
 /*grafo
 #my-chart.line {
   height: 200px;
@@ -21183,5 +21189,12 @@ div.tagsinput {
   height: 100px; 
   max-width: 75%; 
   margin: 5% auto;
+}
+
+#my-chart.bar {
+  --labels-size: 200px;
+}
+#my-chart.column {
+  --labels-size: 4rem;
 }
 /*# sourceMappingURL=maps/style.css.map */

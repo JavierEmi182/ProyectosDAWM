@@ -6,8 +6,11 @@ let firstTime=false;
 var fetchbtn= document.getElementById('fetch');
       fetchbtn.addEventListener('click',  (event) => {
 
-            //resetear contador rec
+            //resetear contador 
       document.getElementById('contrec').innerHTML=0;
+      document.getElementById('contJPG').innerHTML=0;
+      document.getElementById('contPNG').innerHTML=0;
+      document.getElementById('contotros').innerHTML=0;
 
       let cont0 = document.getElementById('contrec').innerHTML
       console.log(contAntes)
@@ -18,29 +21,10 @@ var fetchbtn= document.getElementById('fetch');
       //console.log(lista)
       for (let i = 0; i < imgFetch.length; i++) {
             cargarDatos(imgFetch[i]);
-            
-            //let contInicio =document.getElementsByClassName('charts-css > tr')[i].split(';')[0]
-            //console.log('prueba: ' +contInicio)
-            //console.log(i)
-            //console.log(document.getElementsByClassName('dato'))
-            //contInicio=document.getElementsByClassName('dato')[i].getAttribute('style').split(':')[1].split(';')[0];
-            //console.log(document.getElementsByClassName('dato')[i].getAttribute('style').split(':')[1].split(';')[0]);
+
       }
 
-      
-      /*console.log("antes")
-      console.log(contAntes)
-      console.log("despues")
-      //console.log(contadorInicio)
-      console.log(contDespues)
 
-      let cont1 = document.getElementById('contrec').innerHTML
-
-      */
-      
-
-      
-      //mostrarDatos()
       
       console.log("otro dato")
       console.log(document.getElementsByClassName('dato'))
@@ -93,23 +77,21 @@ let cargarDatos = (imgFetch) => {
                         document.getElementById('contotros').innerHTML=cont
                   }
 
-                  //document.getElementById('cont JPG')[0].innerHTML = `` 
 
       })
-      //console.log(contDespues)
+
 }
-console.log("antes del filtrar")
+
+//FILTRADO
 
 var filtrarhbtn= document.getElementById('filtrar');
 var flagFiltro= false;
-//console.log(filtrarhbtn)
 
       filtrarhbtn.addEventListener('click', (event) => {
       if(flagFiltro==false){
             let imgFetch= document.getElementsByClassName('imgFetch')
             console.log(imgFetch)
             for (let i = 0; i < imgFetch.length; i++) {
-                  //console.log(imgFetch[i])
                   if(imgFetch[i].getAttribute('src').split('.')[2].toUpperCase()!='GIF'){
                         imgFetch[i].style.visibility="hidden"
                   }
@@ -118,7 +100,6 @@ var flagFiltro= false;
       }else{
             limpiarFiltro();
       }
-      //mostrarDatos()
 });
 
 let limpiarFiltro = () => {
@@ -128,15 +109,12 @@ let limpiarFiltro = () => {
 
       }
 }
+
 //CARGAR GRAFICO LINEAS
-var grafobtn= document.getElementById('grafo1');
+var grafo1btn= document.getElementById('grafo1');
 
-grafobtn.addEventListener('click', (event) => {
+grafo1btn.addEventListener('click', (event) => {
       let plantillaRow = ``
-
-      
-            //let contInicio
-            //console.log(document.getElementsByClassName('dato')[lista.length-1].getAttribute('style').split(':'))
 
             if(firstTime==false){
                   if(contDespues<9){
@@ -162,12 +140,8 @@ grafobtn.addEventListener('click', (event) => {
                   }
             }else{
             let lista=document.getElementsByClassName('dato')
-            //console.log(lista)
-            console.log(document.getElementsByClassName('dato')[lista.length-1])
             let contadorInicio=document.getElementsByClassName('dato')[lista.length-1].getAttribute('style').split(':')[2];
-            console.log("contador inicio")
-            console.log(contadorInicio)
-            if(contDespues<9){
+            if(contDespues<10){
                   plantillaRow += `
                               <tr>
                                   <td class="dato" style="--start: 0.0${contadorInicio}; --size: 0.0${contDespues}"> <span class="data"> ${contDespues} </span> </td>
@@ -193,3 +167,103 @@ grafobtn.addEventListener('click', (event) => {
       document.getElementsByTagName('tbody')[0].innerHTML += plantillaRow
 
 });
+
+
+//    CARGAR GRAFICO EXTENSIONES
+var grafo2btn= document.getElementById('grafo2');
+
+grafo2btn.addEventListener('click', (event) => {
+      let plantillaRow = ``
+
+      let valorPNG= document.getElementById('contPNG').innerHTML
+      let valorJPG=  document.getElementById('contJPG').innerHTML
+      let valorGIF=  document.getElementById('contGIF').innerHTML
+      let valorOtros=  document.getElementById('contotros').innerHTML
+
+      let listaCont= document.getElementsByClassName("cont")
+
+      let listaTags= ['JPG','GIF','PNG','Otros']
+      //JPG GIF PNG OTROS
+      for(var i=0;i<listaCont.length-1;i++){
+            if(listaCont[i].innerHTML>9){
+                  plantillaRow += `
+                  <tr>
+                        <th scope="row"> ${listaTags[i]} </th>
+                        <td style="--start: 0.0; --size: 0.${listaCont[i].innerHTML}"> <span class="data"> ${listaCont[i].innerHTML} </span> </td>
+                  </tr>
+                  `
+            }else{
+                  plantillaRow += `
+                  <tr>
+                        <th scope="row"> ${listaTags[i]} </th>
+                        <td style="--start: 0.0; --size: 0.0${listaCont[i].innerHTML}"> <span class="data"> ${listaCont[i].innerHTML} </span> </td>
+                  </tr>
+                  `
+            }
+      }
+      //PNG
+      /*
+      if(valorPNG>9){
+            plantillaRow += `
+            <tr>
+                  <td style="--start: 0.0; --size: 0.${valorPNG}"> <span class="data"> PNG </span> </td>
+            </tr>
+            `
+      }else{
+            plantillaRow += `
+            <tr>
+                  <td style="--start: 0.0; --size: 0.0${valorPNG}"> <span class="data"> PNG </span> </td>
+            </tr>
+            `
+      }
+
+      //JPG
+      if(valorJPG>9){
+            plantillaRow += `
+            <tr>
+                  <td style="--start: 0.0; --size: 0.${valorJPG}"> <span class="data"> JPG </span> </td>
+            </tr>
+            `
+      }else{
+            plantillaRow += `
+            <tr>
+                  <td style="--start: 0.0; --size: 0.0${valorJPG}"> <span class="data"> JPG </span> </td>
+            </tr>
+            `
+      }
+
+      //GIF
+      if(valorGIF>9){
+            plantillaRow += `
+            <tr>
+                  <td style="--start: 0.0; --size: 0.${valorGIF}"> <span class="data"> GIF </span> </td>
+            </tr>
+            `
+      }else{
+            plantillaRow += `
+            <tr>
+                  <td style="--start: 0.0; --size: 0.0${valorGIF}"> <span class="data"> GIF </span> </td>
+            </tr>
+            `
+      }
+
+      //OTROS
+      if(valorOtros>9){
+            plantillaRow += `
+            <tr>
+                  <td style="--start: 0.0; --size: 0.${valorOtros}"> <span class="data"> Otros </span> </td>
+            </tr>
+            `
+      }else{
+            plantillaRow += `
+            <tr>
+                  <td style="--start: 0.0; --size: 0.0${valorOtros}"> <span class="data"> Otros </span> </td>
+            </tr>
+            `
+      }
+*/
+      document.getElementsByClassName('column')[0].innerHTML += plantillaRow
+
+      });
+
+
