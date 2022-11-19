@@ -116,7 +116,7 @@ var grafo1btn= document.getElementById('grafo1');
 grafo1btn.addEventListener('click', (event) => {
       let plantillaRow = ``
 
-            if(firstTime==false){
+            if(firstTime==false){/*
                   if(contDespues<9){
                         plantillaRow += `
                                     <tr>
@@ -137,11 +137,22 @@ grafo1btn.addEventListener('click', (event) => {
                                     </tr>
                                     `
                         firstTime=true
-                  }
+                  }*/
+                  plantillaRow += `
+                                    <tr>
+                                        <td class="dato" style="--start: 0.0; --size: ${contDespues}/15"> <span class="data"> ${contDespues} </span> </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dato" style="--start: ${contDespues}/15; --size: 0.0"> <span class="data">  </span> </td>
+                                    </tr>
+                                    `
+                                    firstTime=true
+
             }else{
+                  
             let lista=document.getElementsByClassName('dato')
             let contadorInicio=document.getElementsByClassName('dato')[lista.length-1].getAttribute('style').split(':')[2];
-            if(contDespues<10){
+            /*if(contDespues<10){
                   plantillaRow += `
                               <tr>
                                   <td class="dato" style="--start: 0.0${contadorInicio}; --size: 0.0${contDespues}"> <span class="data"> ${contDespues} </span> </td>
@@ -161,7 +172,16 @@ grafo1btn.addEventListener('click', (event) => {
                               </tr>
                               `
                   contadorInicio=contDespues;
-            }
+            }*/
+
+            plantillaRow += `
+                              <tr>
+                                  <td class="dato" style="--start: ${contadorInicio}/15; --size: ${contDespues}/15"> <span class="data"> ${contDespues} </span> </td>
+                              </tr>
+                              <tr>
+                                  <td class="dato" style="--start: ${contDespues}/15; --size: 0.0"> <span class="data">  </span> </td>
+                              </tr>
+                              `
       }
 
       document.getElementsByTagName('tbody')[0].innerHTML += plantillaRow
@@ -185,7 +205,7 @@ grafo2btn.addEventListener('click', (event) => {
       let listaTags= ['JPG','GIF','PNG','Otros']
       //JPG GIF PNG OTROS
       for(var i=0;i<listaCont.length-1;i++){
-            if(listaCont[i].innerHTML>9){
+           /* if(listaCont[i].innerHTML>9){
                   plantillaRow += `
                   <tr>
                         <th scope="row"> ${listaTags[i]} </th>
@@ -199,7 +219,13 @@ grafo2btn.addEventListener('click', (event) => {
                         <td style="--start: 0.0; --size: 0.0${listaCont[i].innerHTML}"> <span class="data"> ${listaCont[i].innerHTML} </span> </td>
                   </tr>
                   `
-            }
+            }*/
+            plantillaRow += `
+                  <tr>
+                        
+                        <td style="--start: 0.0; --size: ${listaCont[i].innerHTML}/21"> <span class="data"> ${listaCont[i].innerHTML} (${listaTags[i]})  </span> </td>
+                  </t
+                  `
       }
       //PNG
       /*
@@ -262,7 +288,7 @@ grafo2btn.addEventListener('click', (event) => {
             `
       }
 */
-      document.getElementsByClassName('column')[0].innerHTML += plantillaRow
+      document.getElementsByClassName('column')[0].innerHTML = plantillaRow
 
       });
 
