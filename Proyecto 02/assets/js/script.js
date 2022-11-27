@@ -30,7 +30,9 @@ var fetchbtn= document.getElementById('fetch');
       console.log("otro dato")
       console.log(document.getElementsByClassName('dato'))
       contDespues=0;
+
 });
+
 
 
 
@@ -176,6 +178,8 @@ let limpiarFiltro = () => {
       }
 }
 
+
+
 //CARGAR GRAFICO LINEAS
 var grafo1btn= document.getElementById('grafo1');
 
@@ -212,6 +216,8 @@ grafo1btn.addEventListener('click', (event) => {
       document.getElementsByTagName('tbody')[0].innerHTML += plantillaRow
 
 });
+
+
 
 //LIMPIAR GRAFICO
 let limpiarGrafico1 = () => {
