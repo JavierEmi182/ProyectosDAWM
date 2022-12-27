@@ -16,29 +16,32 @@ export class ContadoresComponent implements OnInit  {
   extensiones: string[]=[];
   fotos: Foto[]=[];
 
+  
+
   constructor(private recursosService: RecursosService) {
  
   }
 
   async ngOnInit(){
-    for(let i=0;i<6;i++){
+    for(let i=0;i<21;i++){
       await this.recursosService.method_get().then(res=>{this.fotos.push(res)});
       this.extensiones.push(this.recursosService.extension)
       console.log(this.fotos)
       
-      await this.extensiones.forEach(extension => {
-        if(extension=='PNG'){
-          this.contPNG++
-        }else if (extension=='JPG') {
-          this.contJPG++
-        }else if (extension=='GIF'){
-          this.contGIF++
-        }
-         else {
-          this.contotros++
-        }
-        
-      });
+      
     }
+    await this.extensiones.forEach(extension => {
+      if(extension=='PNG'){
+        this.contPNG++
+      }else if (extension=='JPG') {
+        this.contJPG++
+      }else if (extension=='GIF'){
+        this.contGIF++
+      }
+       else {
+        this.contotros++
+      }
+      
+    });
   }
 }

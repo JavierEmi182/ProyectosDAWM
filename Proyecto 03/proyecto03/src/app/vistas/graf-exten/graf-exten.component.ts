@@ -25,33 +25,38 @@ export class GrafExtenComponent implements OnInit {
   }
 
   async ngOnInit(){
-    for(let i=0;i<6;i++){
+    for(let i=0;i<21;i++){
       await this.recursosService.method_get().then(res=>{this.fotos.push(res)});
       this.extensiones.push(this.recursosService.extension)
       console.log(this.fotos)
       
-      await this.extensiones.forEach(extension => {
-        if(extension=='PNG'){
-          this.contPNG++
-          this.conttotal++
-        }else if (extension=='JPG') {
-          this.contJPG++
-          this.conttotal++
-        }else if (extension=='GIF'){
-          this.contGIF++
-          this.conttotal++
-        }
-         else {
-          this.contotros++
-          this.conttotal++
-        }
-        
-        console.log(this.contGIF)
+      
+    }
+
+    await this.extensiones.forEach(extension => {
+      console.log(extension)
+      if(extension=='PNG'){
+        this.contPNG++
+        this.conttotal++
+      }else if (extension=='JPG') {
+        this.contJPG++
+        this.conttotal++
+      }else if (extension=='GIF'){
+        this.contGIF++
+        this.conttotal++
+      }
+       else {
+        this.contotros++
+        this.conttotal++
+      }
+      
+      
+    });
+    
         console.log(this.contJPG)
+        console.log(this.contGIF)
         console.log(this.contPNG)
         console.log(this.contotros)
-      });
-    }
   }
   
 }
