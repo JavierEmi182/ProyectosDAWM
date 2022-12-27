@@ -20968,17 +20968,6 @@
     width: 100%;
   }
   
-  #fetch {
-    background-color: grey;
-    font-size: 24px;
-    transition-duration: 0.4s;
-    border-radius: 8px;
-  }
-  
-  #fetch:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
-  }
   
   .btnFiltro {
     background-color: aquamarine;

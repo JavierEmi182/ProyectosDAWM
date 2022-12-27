@@ -1,0 +1,256 @@
+<button id='fetch'>Fetch</button>
+
+<div class="card" *ngFor="let foto of fotos; let i=index">
+      
+      <div *ngFor="let extension of extensiones;let j=index">
+          <div *ngIf="i==j">
+            <div *ngIf="extension!='MP4' && extension!='WEBM';else elseBlock">
+              <p>pedido {{i+1}}.-</p>
+              <img class="imgFetch" src="{{foto.url}}" alt="Fetch" width="150" height="160">
+            <p>tamaño de la image: {{foto.fileSizeBytes}}</p>
+              <p>extension: {{extension}}</p>
+            </div>
+            <ng-template #elseBlock>
+                <p>pedido {{i+1}}.-formato incorrecto, solo acepta formatos de imagenes</p>
+                  <p>extension: {{extension}}</p>
+            </ng-template>
+        </div>
+      </div>
+</div>
+
+    
+
+
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+
+      <div class="g d-flex align-items-center align-self-start">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+
+      <div class="g d-flex align-items-center align-self-start">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+
+      <div class="g d-flex align-items-center align-self-start">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+
+      <div class="g d-flex align-items-center align-self-start">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+
+      <div class="g d-flex align-items-center align-self-start">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+
+      <div class="g d-flex align-items-center align-self-start">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+        <img class="imgFetch" src="" alt="Fetch" width="150" height="160">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+</div>
+<div class="row">
+
+  <div class="col-sm-4 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h5>JPG</h5>
+        <div class="row">
+          <div class="col-8 col-sm-12 col-xl-8 my-auto">
+            <div class="d-flex d-sm-block d-md-flex align-items-center">
+              <h2 class="cont" id="contJPG">0</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h5>GIF</h5>
+        <div class="row">
+          <div class="col-8 col-sm-12 col-xl-8 my-auto">
+            <div class="d-flex d-sm-block d-md-flex align-items-center">
+              <h2 class="cont" id="contGIF">0 </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h5>PNG</h5>
+        <div class="row">
+          <div class="col-8 col-sm-12 col-xl-8 my-auto">
+            <div class="d-flex d-sm-block d-md-flex align-items-center">
+              <h2 class="cont" id="contPNG">0</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h5>Otros</h5>
+        <div class="row">
+          <div class="col-8 col-sm-12 col-xl-8 my-auto">
+            <div class="d-flex d-sm-block d-md-flex align-items-center">
+              <h2 class="cont" id="contotros">0</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h5>Recursividad</h5>
+        <div class="row">
+          <div class="col-8 col-sm-12 col-xl-8 my-auto">
+            <div class="d-flex d-sm-block d-md-flex align-items-center">
+              <h2 class="cont" id="contrec">0</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row ">
+  <div class="col-12 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Grafico recursividad</h4>
+
+        <button id='grafo1'>Cargar Grafico Lineas</button>
+        <button id='limpiar1'>Limpiar Grafico Lineas</button>
+        <table class="charts-css line" id="my-chart">
+
+          <tbody>
+
+          </tbody>
+
+        </table>
+      </div>
+
+      <!--    Grafico extensiones    -->
+
+      <div class="card-body">
+        <h4 class="card-title">Grafico Extensiones</h4>
+
+        <button id='grafo2'>Cargar Grafico Barras</button>
+        <table class="charts-css column show-labels" id="my-chart">
+
+          <caption> Grafico Extensiones </caption>
+          <thead>
+            <tr>
+              <th scope="col"> Extension </th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- content-wrapper ends -->
+<!-- partial:partials/_footer.html -->
+<footer class="footer">
+  <div class="d-sm-flex justify-content-center justify-content-sm-between">
+    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com
+      2020</span>
+    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a
+        href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a>
+      from Bootstrapdash.com</span>
+  </div>
+</footer>
+<!-- page-body-wrapper ends -->
+
+
+<!-- container-scroller -->
+<!-- plugins:js -->
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="assets/vendors/chart.js/Chart.min.js"></script>
+
+<!-- inject:js -->
+
+<!-- Custom js for this page -->
+<script src="assets/js/dashboard.js"></script>
