@@ -12,6 +12,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { GrafExtenComponent } from './vistas/graf-exten/graf-exten.component';
+import { ContadoresComponent } from './vistas/contadores/contadores.component';
 
 @NgModule({
   
@@ -19,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     PedidoGComponent,
     PrincipalComponent,
-    MenuComponent
+    MenuComponent,
+    GrafExtenComponent,
+    ContadoresComponent
   ],
   imports: [
     BrowserModule,

@@ -20,6 +20,7 @@ export class PedidoGComponent implements OnInit{
       await this.recursosService.method_get().then(res=>{this.fotos.push(res)});
       this.extensiones.push(this.recursosService.extension)
       console.log(this.fotos)
+      
     }
   }
 }
