@@ -16,7 +16,7 @@ export class PedidoGComponent implements OnInit{
   }
 
   async ngOnInit(){
-    for(let i=0;i<6;i++){
+    for(let i=0;i<21;i++){
       await this.recursosService.method_get().then(res=>{this.fotos.push(res)});
       this.extensiones.push(this.recursosService.extension)
       console.log(this.fotos)
