@@ -1,0 +1,21 @@
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="Principal">
+      <mat-icon>home</mat-icon>
+      <span>Principal</span>
+    </button>
+    <button mat-menu-item routerLink="pedido-g">
+      <mat-icon>pets</mat-icon>
+      <span>Realizar Pedido</span>
+    </button>
+    <button mat-menu-item routerLink="contadores">
+      <mat-icon>linear_scale</mat-icon>
+      <span>Contadores</span>
+    </button>
+    <button mat-menu-item routerLink="GrafExten">
+        <mat-icon>insert_chart_outlined</mat-icon>
+        <span>Grafico extensiones</span>
+      </button>
+  </mat-menu>

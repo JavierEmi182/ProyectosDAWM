@@ -1,0 +1,83 @@
+<main class="col-md-8 ms-sm-auto col-lg-10 px-md-4">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2><%= title%></h2>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>FechaPedido</th>
+                        <th>Estado</th>
+                        <th>Nombre Producto</th>
+                        <th>Nombre Vendedor</th>
+                        <th>Cantidad</th>
+                        <th>Precio por Producto</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>  
+                    <% arrSales.forEach((sale, idx) => { %>  
+                      <tr>
+                        <td><%= sale.orderNumber%></td>  
+                        <td><%= sale.orderDate%></td>  
+                        <td><%= sale.status %></td>  
+                        <td><%= sale.productName %></td>   
+                        <td><%= sale.productVendor %></td> 
+                        <td><%= sale.quantityOrdered %></td> 
+                        <td><%= sale.priceEach %></td> 
+                        <td class="sumas" id="total-<%= idx%>"></td> 
+                      </tr>  
+
+                      <script>
+
+                        function toFixed(num, fixed) {
+                            var re = new RegExp('^-?\\d+(?:\.\\d{0,' + (fixed || -1) + '})?');
+                            return num.toString().match(re)[0];
+                        }
+
+                        document.addEventListener("DOMContentLoaded",function(event){
+                            var cantidad="<%= sale.quantityOrdered %>";
+                            var precio ="<%= sale.priceEach %>";
+
+                            var totalFinal=0;
+                    
+                            var total=cantidad*precio
+                            total=toFixed(total,2)
+                            //totalFinal+=total
+                            //console.log("antes entrar")
+                            document.getElementById('total-<%= idx%>').innerHTML+=(total);
+
+                        });
+                    </script>
+                    <% }); %>  
+                </tbody>  
+                <tfoot>
+                    <tr>
+                      <td><h2><b>Suma Total</b></h2></td>
+                      <td ><h2 id="totalFinal"></h2></td>
+                    </tr>
+                  </tfoot>
+                  <script>
+                    document.addEventListener("DOMContentLoaded",function(event){
+                    var totalFinal=0;
+                    const sumas=document.getElementsByClassName("sumas")
+                    for(let i=0;i<sumas.length;i++){
+                        console.log(sumas[i].textContent)
+                        totalFinal+=parseFloat(sumas[i].textContent)
+                    }
+                    console.log(totalFinal)
+                    totalFinal=toFixed(totalFinal,2)
+                    document.getElementById('totalFinal').innerHTML+=(totalFinal);
+                })
+                  </script>
+              </table>
+        </div>
+    </div>  
+</main>
+

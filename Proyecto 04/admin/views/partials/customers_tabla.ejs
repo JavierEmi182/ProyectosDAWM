@@ -1,0 +1,38 @@
+<main class="col-md-8 ms-sm-auto col-lg-10 px-md-4">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>Customers</h2>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Empresa</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>  
+                    <% arrCustomers.forEach((customer, idx) => { %>  
+                      <tr>
+                        <td><%= customer.customerNumber%></td>  
+                        <td><%= customer.customerName%></td>  
+                        <td><%= customer.contactFirstName %></td>  
+                        <td><%= customer.contactLastName %></td>   
+                        <td>  
+                            <a href="/customers/search/<%= customer.customerNumber %>" class="search" title="Search" data-toggle="tooltip"><i class="material-icons">&#xe8b6;</i></a>  
+                            <a href="/customers/shipped/<%= customer.customerNumber %>" class="shipped" title="Shipped" data-toggle="tooltip"><i class="material-icons">&#xe154;</i></a>  
+                        </td>  
+                      </tr>  
+                    <% }); %>  
+                </tbody>  
+              </table>
+        </div>
+    </div>  
+</main>

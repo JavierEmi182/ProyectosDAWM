@@ -1,0 +1,19 @@
+
+
+<div class="card" *ngFor="let foto of fotos; let i=index">
+      
+      <div *ngFor="let extension of extensiones;let j=index">
+          <div *ngIf="i==j">
+            <div *ngIf="extension!='MP4' && extension!='WEBM';else elseBlock">
+              <h2>pedido {{i+1}}.-</h2>
+              <img class="imgFetch" src="{{foto.url}}" alt="Fetch" width="150" height="160">
+            <p>tamaño de la image: {{foto.fileSizeBytes}}</p>
+              <p>extension: {{extension}}</p>
+            </div>
+            <ng-template #elseBlock>
+              <h2>pedido {{i+1}}.-</h2><p>formato incorrecto, solo acepta formatos de imagenes</p>
+                  <p>extension: {{extension}}</p>
+            </ng-template>
+        </div>
+      </div>
+</div>
